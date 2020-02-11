@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const proDb = process.env.MONGODB_URI || "mongodb://localhost/peltier";
+const proDb =  "mongodb://localhost/peltier";
 const mongoose = require("mongoose");
 mongoose.connect(proDb, {
   useNewUrlParser: true,

@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const Mongo = require("mongodb").MongoClient;
-const proDb = process.env.MONGODB_URI || "mongodb://localhost/peltier";
+const proDb ="mongodb://localhost/peltier";
 const jwt = require("jsonwebtoken");
 
 
