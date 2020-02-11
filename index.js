@@ -6,7 +6,7 @@ const helmet = require("helmet");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors({ credentials: true, origin: "http://localhost:8080" }));
-
+app.use(helmet);
 const login = require("./requests/login");
 app.use("/login", login);
 

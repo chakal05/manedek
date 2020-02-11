@@ -1,10 +1,12 @@
 const express = require("express");
-let router = express.Router();
-var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/peltier", {
+const router = express.Router();
+const proDb = process.env.MONGODB_URI ;
+const mongoose = require("mongoose");
+mongoose.connect(proDb || "mongodb://localhost/peltier", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+
 const bcrypt = require("bcryptjs");
 const salt = bcrypt.genSaltSync(12);
 // 'useFindAndModify' set to false

@@ -3,12 +3,13 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const Mongo = require("mongodb").MongoClient;
+const proDb = process.env.MONGODB_URI ;
 const url = "mongodb://localhost:27017/"; 
 const jwt = require("jsonwebtoken");
 
 
 async function checkUser() {
-  const connection = await Mongo.connect(url, {
+  const connection = await Mongo.connect( proDb || url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });
