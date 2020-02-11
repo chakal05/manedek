@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const proDb = process.env.MONGODB_URI ;
+const proDb = process.env.MONGODB_URI || "mongodb://localhost/peltier";
 const mongoose = require("mongoose");
-mongoose.connect(proDb || "mongodb://localhost/peltier", {
+mongoose.connect(proDb, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
