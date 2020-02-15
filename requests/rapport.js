@@ -1,12 +1,10 @@
 const express = require("express");
-const router = express.Router();
-const proDb =  "mongodb://localhost/peltier";
-const mongoose = require("mongoose");
-mongoose.connect(proDb, {
+let router = express.Router();
+var mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/peltier", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
-
 
 // 'useFindAndModify' set to false
 mongoose.set("useFindAndModify", false);
