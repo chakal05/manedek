@@ -39,14 +39,14 @@ app.use('/bedAll', auth, bedAllotment);
 app.use('/rapport', auth, rapport);
 app.use('/prescription', auth, prescription);
 
-if(process.env.NODE_ENV === 'production'){
+//if(process.env.NODE_ENV === 'production'){
 // Static folder
 app.use(express.static(__dirname + "/public/"));
 
 //SPA
 app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
 
-}
+//}
 
 const port = process.env.port || 4000;
 app.listen(port, () => console.log('APP RUNNING ON PORT 4000'));
